@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Feed - Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css"
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-light bg-white border-bottom sticky-top">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <i class="bi bi-instagram fs-4 me-2"></i>
+                <span class="navbar-brand mb-0 h1">Instagram</span>
+            </div>
+            <div class="d-flex gap-2">
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createPostModal">Crear nuevo postt</button>
+                
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-gear-fill"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Perfil</a></li>
+                        <li><a class="dropdown-item" href="#">Accesibilitadad</a></li>
+                        <li><a class="dropdown-item" href="#">Privacitat y Datos</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-2">
+        <ul class="nav nav-tabs justify-content-center border-0" id="myTab" role="tablist">
+            <li class="nav-item">
+                <button class="nav-link active" id="grid-tab" data-bs-toggle="tab" data-bs-target="#grid-view" type="button">
+                    <i class="bi bi-grid-3x3"></i>
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" id="list-tab" data-bs-toggle="tab" data-bs-target="#list-view" type="button">
+                    <i class="bi bi-square-fill"></i>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="tab-content mt-2" id="myTabContent">
+        
+        <div class="tab-pane fade show active" id="grid-view" role="tabpanel">
+            <div class="container-fluid p-0">
+                <div class="row g-1"> <div class="col-4"><img src="https://picsum.photos/id/26/1000/1000" class="grid-img"></div>
+                    <div class="col-4"><img src="https://picsum.photos/id/36/1000/1000" class="grid-img"></div>
+                    <div class="col-4"><img src="https://picsum.photos/id/10/1000/1000" class="grid-img"></div>
+                    <div class="col-4"><img src="https://picsum.photos/id/44/1000/1000" class="grid-img"></div>
+                    <div class="col-4"><img src="https://picsum.photos/id/56/1000/1000" class="grid-img"></div>
+                    <div class="col-4"><img src="https://picsum.photos/id/63/1000/1000" class="grid-img"></div>
+                    <div class="col-4"><img src="https://picsum.photos/id/75/1000/1000" class="grid-img"></div>
+                    <div class="col-4"><img src="https://picsum.photos/id/88/1000/1000" class="grid-img"></div>
+                    <div class="col-4"><img src="https://picsum.photos/id/111/1000/1000" class="grid-img"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="list-view" role="tabpanel">
+            <div class="container py-4">
+                <div class="feed-container">
+                    <div class="card mb-4">
+                        <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0 fs-6">Goju Satoru</h5>
+                            <small class="text-muted">01/02</small>
+                        </div>
+                        <img src="https://sm.ign.com/t/ign_es/slotter/default/animes-2023_3xz9.800.jpg" class="card-img-top rounded-0" alt="...">
+                        <div class="card-body">
+                            <p class="card-text fw-bold">1.250 Likes</p>
+                            <p class="card-text">Goju Satoru invocando dominio</p>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0 fs-6">Solo leveling</h5>
+                            <small class="text-muted">02/02</small>
+                        </div>
+                        <img src="https://i.pinimg.com/736x/e3/9c/56/e39c564360a91e48edcd430355ee68ce.jpg" class="card-img-top rounded-0" alt="...">
+                        <div class="card-body">
+                            <p class="card-text fw-bold">850 Likes</p>
+                            <p class="card-text">Sung jinwoo modo monarca</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="createPostModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h6>Crear nuevo post</h6>
+                    <label class="fw-bold mt-2">subtitulo:</label>
+                    <textarea class="form-control" rows="2" placeholder="Add the caption of your post here"></textarea>
+                    <div class="mt-2">
+                        <button class="btn btn-light border btn-sm"><i class="bi bi-camera-fill"></i></button>
+                        <button class="btn btn-light border btn-sm"><i class="bi bi-geo-alt-fill"></i></button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-success btn-sm">Publicar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
